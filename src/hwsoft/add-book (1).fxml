@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #ffcc00;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hwsoft.addbook">
+   <children>
+      <Label layoutX="14.0" layoutY="122.0" prefHeight="30.0" prefWidth="138.0" text="Author name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="175.0" prefHeight="30.0" prefWidth="138.0" text="Description :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="234.0" prefHeight="30.0" prefWidth="176.0" text="Type :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="306.0" prefHeight="30.0" prefWidth="194.0" text="Cover photo : ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="356.0" prefHeight="30.0" prefWidth="149.0" text="# Hard copy : ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="414.0" prefHeight="30.0" prefWidth="65.0" text="Rate: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="476.0" prefHeight="30.0" prefWidth="149.0" text="Price hardcopy :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="browse" layoutX="194.0" layoutY="306.0" onAction="#addphoto" style="-fx-background-color: #2C3E50;" text="choose a photo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="addbook" layoutX="17.0" layoutY="616.0" onAction="#addbook" prefHeight="44.0" prefWidth="106.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 10;" text="ADD Book " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="aname" layoutX="190.0" layoutY="122.0" />
+      <JFXTextField fx:id="type" layoutX="216.0" layoutY="233.0" />
+      <JFXTextField fx:id="rate" layoutX="158.0" layoutY="414.0" />
+      <JFXTextField fx:id="hard" layoutX="208.0" layoutY="356.0" />
+      <JFXTextField fx:id="ph" layoutX="208.0" layoutY="476.0" />
+      <TextArea fx:id="about" layoutX="194.0" layoutY="161.0" prefHeight="59.0" prefWidth="363.0" />
+      <Label layoutX="22.0" layoutY="528.0" prefHeight="30.0" prefWidth="149.0" text="Price softcopy : ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="ps" layoutX="208.0" layoutY="521.0" />
+      <JFXButton layoutX="461.0" layoutY="716.0" onAction="#go_books" prefHeight="44.0" prefWidth="106.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 15;" text="Books " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="18.0" layoutY="67.0" prefHeight="30.0" prefWidth="120.0" text="Book name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="bname" layoutX="194.0" layoutY="67.0" />
+      <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;">
+         <children>
+            <Label layoutX="206.0" layoutY="9.0" text="Add book" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="pdf1" layoutX="176.0" layoutY="571.0" onAction="#addpdf" style="-fx-background-color: #2C3E50;" text="choose pdf" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="20.0" layoutY="572.0" prefHeight="30.0" prefWidth="149.0" text="PDF:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="38.0" layoutY="726.0" onAction="#back" prefHeight="44.0" prefWidth="63.0" style="-fx-background-color: #ffcc00; -fx-background-radius: 10;" text="&lt;&lt;" textFill="WHITE">
+         <font>
+            <Font name="Bell MT Bold" size="21.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
