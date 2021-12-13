@@ -31,6 +31,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 /**
@@ -57,10 +58,75 @@ public class SigninController implements Initializable {
    
             @FXML
     private void sign(ActionEvent event) throws IOException {
-        String id = user.getText();
 
-        if (user.getText().equals("dana@gmail.com")) {
-                        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("adminpage.fxml"));
+         boolean flag = false ;
+        String u = user.getText() ; 
+        String p = pass.getText() ;
+
+         try {
+        
+        OracleDataSource ods = new OracleDataSource() ;
+        ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+         ods.setUser("c##marah1");
+                  ods.setPassword("123456");
+        Connection con = ods.getConnection();
+        Statement stm = con.createStatement();
+
+        String str_stm = "Select Email,Pass from Users" ;
+        ResultSet re = stm.executeQuery(str_stm) ;
+        String in_user = null;
+        while(re.next()){
+        in_user = re.getString("Email");
+        String in_pass = re.getString("pass") ;
+        if(u.equals(in_user) && p.equals(in_pass)){
+            flag = true ;
+            static_start_id = re.getString("Email") ;
+        break ;
+
+        }
+        }
+
+        if(flag) {
+         //  if(6==length(in_user)){
+                 Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Myhome.fxml"));
+        Scene tabelViewScene = new Scene(tabelViewParent);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tabelViewScene);
+        window.show();
+     
+        }
+           else        
+        {                                                                             // ***********************       
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);                              //*                    //*
+        alert.setTitle("Error Message");                                                // Error message ....   *
+        alert.setHeaderText("Login error");                                            //*                    //*
+        alert.setContentText("Wrong in username or password");                         // ***********************
+        alert.showAndWait();        
+            user.setText("");
+            pass.setText("");   
+        }
+        } // try 1
+           catch (Exception ex) {
+          //  Logger.getLogger(showProductsController.class.getName()).log(Level.SEVERE, null, ex);
+                               }
+    }
+    
+
+    @FXML
+     private void signup(ActionEvent event) throws IOException {
+        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Signup.fxml"));
+        Scene tabelViewScene = new Scene(tabelViewParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabelViewScene);
+        window.show();
+    }
+    
+         @FXML
+    void signadmin(ActionEvent event) throws IOException{
+        if (user.getText().equals("Software@najah.edu") && pass.getText().equals("software") ) {
+                        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Adminpage.fxml"));
             Scene tabelViewScene = new Scene(tabelViewParent);
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -69,23 +135,7 @@ public class SigninController implements Initializable {
 
         }
         
-        else{ Parent tabelViewParent = FXMLLoader.load(getClass().getResource("danaTOP.fxml"));
-            Scene tabelViewScene = new Scene(tabelViewParent);
+                               
 
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(tabelViewScene);
-        }
     }
-    
-
-    @FXML
-     private void signup(ActionEvent event) throws IOException {
-        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("signup.fxml"));
-        Scene tabelViewScene = new Scene(tabelViewParent);
-
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tabelViewScene);
-        window.show();
-    }
-    
 }

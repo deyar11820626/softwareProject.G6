@@ -31,7 +31,10 @@ public class AdminpageController implements Initializable {
     private Button view;
     @FXML
     private Button logout;
-
+      @FXML
+    private Button re;
+  @FXML
+    private Button carts;
     /**
      * Initializes the controller class.
      */
@@ -43,7 +46,7 @@ public class AdminpageController implements Initializable {
     @FXML
     private void add(ActionEvent event) throws IOException {
         
-        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("add-book (1).fxml"));
+        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("New1.fxml"));
         Scene tabelViewScene = new Scene(tabelViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -62,12 +65,31 @@ public class AdminpageController implements Initializable {
     }
     
     
-    
+     @FXML
+    void re(ActionEvent event) throws IOException{
+ Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Admintable.fxml"));
+        Scene tabelViewScene = new Scene(tabelViewParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabelViewScene);
+        window.show();
+    }
     
 
     @FXML
     private void logout(ActionEvent event) throws IOException {
-        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("signin.fxml"));
+        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("DanaTOP.fxml"));
+        Scene tabelViewScene = new Scene(tabelViewParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tabelViewScene);
+        window.show();
+        
+        
+    }
+     @FXML
+    private void carts(ActionEvent event) throws IOException {
+        Parent tabelViewParent = FXMLLoader.load(getClass().getResource("AdminCart.fxml"));
         Scene tabelViewScene = new Scene(tabelViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

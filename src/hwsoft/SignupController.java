@@ -62,9 +62,9 @@ public class SignupController implements Initializable {
 
         try {
             ods = new OracleDataSource();
-            ods.setURL("jdbc:oracle:thin:@localhost:1521:orcl");
-            ods.setUser("project");
-            ods.setPassword("4124101971");
+            ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+            ods.setUser("c##marah1");
+            ods.setPassword("123456");
             Connection con = ods.getConnection();
             Statement stm = con.createStatement();
             
@@ -77,8 +77,10 @@ public class SignupController implements Initializable {
                
                 
 
-                String str_statment = "insert into users values( '" + f_n + "', '" + l_n + "', '" + address1 + "', '" + email + "', '" + number_phone + "', '" + password + "' )" ;
+                String str_statment = "insert into Users values( '" + f_n + "', '" + l_n + "', '" + address1 + "', '" + email + "', '" + number_phone + "', '" + password + "' )" ;
                 stm.executeUpdate(str_statment);
+                
+                JOptionPane.showMessageDialog(null, "You now have an account ! !");
     }
         catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.toString());
@@ -87,7 +89,7 @@ public class SignupController implements Initializable {
     }
     @FXML
      void back(ActionEvent event) throws IOException {
-         Parent tabelViewParent = FXMLLoader.load(getClass().getResource("signin.fxml"));
+         Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Signin.fxml"));
         Scene tabelViewScene = new Scene(tabelViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -5,11 +5,24 @@
  */
 package hwsoft;
 
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.shape.Circle;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,8 +38,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import oracle.jdbc.pool.OracleDataSource;
@@ -38,7 +56,7 @@ import oracle.jdbc.pool.OracleDataSource;
  *
  * @author user
  */
-public class Home_1Controller implements Initializable {
+public class marahController implements Initializable {
 
     @FXML
     private TextField text_search;
@@ -93,8 +111,6 @@ public class Home_1Controller implements Initializable {
   
    @FXML
     private ImageView c6;
-    @FXML
-    private Button b11;
      
      
 
@@ -133,7 +149,7 @@ public class Home_1Controller implements Initializable {
             //   while (re.next()) {
             re.next();
             String name = re.getString("Bname");
-            String ath = re.getString("Ph");
+            String ath = re.getString("Aname");
             String pic = re.getString("Cover");
 
             text_name1.setText(name);
@@ -153,7 +169,7 @@ public class Home_1Controller implements Initializable {
             
             re.next();
             String name2 = re.getString("Bname");
-            String ath2 = re.getString("Ph");
+            String ath2 = re.getString("Aname");
             String pic2 = re.getString("Cover");
 
             text_name2.setText(name2);
@@ -171,7 +187,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name3 = re.getString("Bname");
-            String ath3 = re.getString("Ph");
+            String ath3 = re.getString("Aname");
             String pic3 = re.getString("Cover");
 
             text_name3.setText(name3);
@@ -189,7 +205,7 @@ public class Home_1Controller implements Initializable {
             
              re.next();
             String name4 = re.getString("Bname");
-            String ath4 = re.getString("Ph");
+            String ath4 = re.getString("Aname");
             String pic4 = re.getString("Cover");
 
             text_name4.setText(name4);
@@ -206,7 +222,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name5 = re.getString("Bname");
-            String ath5 = re.getString("Ph");
+            String ath5 = re.getString("Aname");
             String pic5 = re.getString("Cover");
 
             text_name5.setText(name5);
@@ -221,7 +237,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name6 = re.getString("Bname");
-            String ath6 = re.getString("Ph");
+            String ath6 = re.getString("Aname");
             String pic6 = re.getString("Cover");
 
             text_name6.setText(name6);
@@ -239,7 +255,7 @@ public class Home_1Controller implements Initializable {
             
 
         } catch (SQLException ex) {
-            Logger.getLogger(Home_1Controller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(marahController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -268,7 +284,7 @@ public class Home_1Controller implements Initializable {
             //   while (re.next()) {
             re.next();
             String name = re.getString("Bname");
-            String ath = re.getString("Ph");
+            String ath = re.getString("Aname");
             String pic = re.getString("Cover");
 
             text_name1.setText(name);
@@ -283,7 +299,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name2 = re.getString("Bname");
-            String ath2 = re.getString("Ph");
+            String ath2 = re.getString("Aname");
             String pic2 = re.getString("Cover");
 
             text_name2.setText(name2);
@@ -301,7 +317,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name3 = re.getString("Bname");
-            String ath3 = re.getString("Ph");
+            String ath3 = re.getString("Aname");
             String pic3 = re.getString("Cover");
 
             text_name3.setText(name3);
@@ -321,7 +337,7 @@ public class Home_1Controller implements Initializable {
             
              re.next();
             String name4 = re.getString("Bname");
-            String ath4 = re.getString("Ph");
+            String ath4 = re.getString("Aname");
             String pic4 = re.getString("Cover");
 
             text_name4.setText(name4);
@@ -338,7 +354,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name5 = re.getString("Bname");
-            String ath5 = re.getString("Ph");
+            String ath5 = re.getString("Aname");
             String pic5 = re.getString("Cover");
 
             text_name5.setText(name5);
@@ -357,7 +373,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name6 = re.getString("Bname");
-            String ath6 = re.getString("Ph");
+            String ath6 = re.getString("Aname");
             String pic6 = re.getString("Cover");
 
             text_name6.setText(name6);
@@ -376,7 +392,7 @@ public class Home_1Controller implements Initializable {
             
 
         } catch (SQLException ex) {
-            Logger.getLogger(Home_1Controller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(marahController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -405,7 +421,7 @@ public class Home_1Controller implements Initializable {
             //   while (re.next()) {
             re.next();
             String name = re.getString("Bname");
-            String ath = re.getString("Ph");
+            String ath = re.getString("Aname");
             String pic = re.getString("Cover");
 
             text_name1.setText(name);
@@ -421,7 +437,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name2 = re.getString("Bname");
-            String ath2 = re.getString("Ph");
+            String ath2 = re.getString("Aname");
             String pic2 = re.getString("Cover");
 
             text_name2.setText(name2);
@@ -437,7 +453,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name3 = re.getString("Bname");
-            String ath3 = re.getString("Ph");
+            String ath3 = re.getString("Aname");
             String pic3 = re.getString("Cover");
 
             text_name3.setText(name3);
@@ -454,7 +470,7 @@ public class Home_1Controller implements Initializable {
             
              re.next();
             String name4 = re.getString("Bname");
-            String ath4 = re.getString("Ph");
+            String ath4 = re.getString("Aname");
             String pic4 = re.getString("Cover");
 
             text_name4.setText(name4);
@@ -469,7 +485,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name5 = re.getString("Bname");
-            String ath5 = re.getString("Ph");
+            String ath5 = re.getString("Aname");
             String pic5 = re.getString("Cover");
 
             text_name5.setText(name5);
@@ -484,7 +500,7 @@ public class Home_1Controller implements Initializable {
 */
             re.next();
             String name6 = re.getString("Bname");
-            String ath6 = re.getString("Ph");
+            String ath6 = re.getString("Aname");
             String pic6 = re.getString("Cover");
 
             text_name6.setText(name6);
@@ -501,14 +517,14 @@ public class Home_1Controller implements Initializable {
             
 
         } catch (SQLException ex) {
-            Logger.getLogger(Home_1Controller.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(marahController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
     
     @FXML
     void button4(ActionEvent event) throws IOException {
-    Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Myhome.fxml"));
+    Parent tabelViewParent = FXMLLoader.load(getClass().getResource("danaTOP.fxml"));
         Scene tabelViewScene = new Scene(tabelViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -516,130 +532,6 @@ public class Home_1Controller implements Initializable {
         window.show();
 
     }
- 
-    @FXML
-    void addtocart1(ActionEvent event) throws SQLException {
-          String m = this.text_name1.getText();
-          String t = this.area1.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n = this. text_name1.getText(); 
-            String l_n = this.area1.getText();
-            String k = "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k+"','"+f_n+"', '"+l_n+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-        
-
     }
-
-    @FXML
-    void addtocart2(ActionEvent event) throws SQLException {
-
-             String m = this.text_name2.getText();
-          String t = this.area2.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n2 = this. text_name2.getText(); 
-            String l_n2 = this.area2.getText();
-            String k2 = "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k2+"','"+f_n2+"', '"+l_n2+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-    }
-
-    @FXML
-    void addtocart3(ActionEvent event) throws SQLException {
-             String m = this.text_name3.getText();
-          String t = this.area3.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n3 = this. text_name3.getText(); 
-            String l_n3 = this.area3.getText();
-            String k3= "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k3+"','"+f_n3+"', '"+l_n3+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-
-    }
-
-    @FXML
-    void addtocart4(ActionEvent event) throws SQLException {
-             String m = this.text_name4.getText();
-          String t = this.area4.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n4 = this. text_name4.getText(); 
-            String l_n4 = this.area4.getText();
-            String k4 = "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k4+"','"+f_n4+"', '"+l_n4+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-
-    }
-
-    @FXML
-    void addtocart5(ActionEvent event) throws SQLException {
-     String m = this.text_name5.getText();
-          String t = this.area5.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n5 = this. text_name5.getText(); 
-            String l_n5= this.area5.getText();
-            String k5 = "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k5+"','"+f_n5+"', '"+l_n5+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-    }
-
-    @FXML
-    void addtocart6(ActionEvent event) throws SQLException {
-             String m = this.text_name6.getText();
-          String t = this.area6.getText();
-                DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String str = "jdbc:oracle:thin:@localhost:1521:xe" ;
-            Connection con = DriverManager.getConnection(str ,"c##marah1" , "123456" );
-            Statement stm = con.createStatement();
-             String f_n6 = this. text_name6.getText(); 
-            String l_n6 = this.area6.getText();
-            String k6= "1";
-            String str_st = "insert into ShoppingBag values( '"+SigninController.static_start_id+"','"+k6+"','"+f_n6+"', '"+l_n6+"' )" ;
-                stm.executeUpdate(str_st);
-                JOptionPane.showMessageDialog(null, "DONE !");  
-                con.setAutoCommit(false);
-                con.commit();
-                  con.close();
-
-    }
-
-    @FXML
-    private void login(ActionEvent event) {
-    }
-}
     
 

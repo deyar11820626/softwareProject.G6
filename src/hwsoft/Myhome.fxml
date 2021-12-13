@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hwsoft.MyhomeController">
+   <children>
+      <JFXButton layoutX="212.0" layoutY="141.0" onAction="#my" prefHeight="72.0" prefWidth="141.0" style="-fx-background-color: #ffcc00;" text="My Cart">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="198.0" layoutY="282.0" onAction="#search" prefHeight="80.0" prefWidth="181.0" style="-fx-background-color: #ffcc00;" text="search for book ">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="218.0" layoutY="423.0" onAction="#reserve" prefHeight="72.0" prefWidth="141.0" style="-fx-background-color: #ffcc00;" text="reserve">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="218.0" layoutY="565.0" onAction="#logout" prefHeight="72.0" prefWidth="141.0" style="-fx-background-color: #ffcc00;" text="log out">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="516.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@no.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="499.0" layoutY="35.0" onAction="#no" prefHeight="60.0" prefWidth="76.0" text=" " />
+   </children>
+</AnchorPane>

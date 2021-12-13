@@ -42,7 +42,7 @@ import oracle.jdbc.pool.OracleDataSource;
  *
  * @author user
  */
-public class DanaTOPController implements Initializable {
+public class homeuserController implements Initializable {
  @FXML
     private ImageView m;
  
@@ -151,18 +151,10 @@ int number = 5;
         }
     }    
         
-@FXML
-    private void login(ActionEvent event) throws IOException {
-          Parent tabelViewParent = FXMLLoader.load(getClass().getResource("Signin.fxml"));
-        Scene tabelViewScene = new Scene(tabelViewParent);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(tabelViewScene);
-        window.show();
-    }
         @FXML
     private void search(ActionEvent event) throws IOException {
-          Parent tabelViewParent = FXMLLoader.load(getClass().getResource("marah.fxml"));
+          Parent tabelViewParent = FXMLLoader.load(getClass().getResource("home_1.fxml"));
         Scene tabelViewScene = new Scene(tabelViewParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

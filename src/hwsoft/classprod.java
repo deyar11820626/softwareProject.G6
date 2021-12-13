@@ -11,32 +11,47 @@ public class classprod {
     
  
     
-   public String book , auther   ,desc , type , pdf; 
-    public int hard , rate, ph , ps   ; 
+   public String book , auther   ,description , type , Pdf; 
+    public int hard , rate, Ph , Ps  ; 
     private String cover;
+   private int Bid;
     
     
-    public classprod()
+  
+    public classprod ( int bid ,String book ,String auther ,String desc ,  String type, String cover , String pdf , int hard , int rate , int ph , int ps )
     {
-        
-    }
-    
-    public classprod ( String book ,String auther ,String desc ,  String type, String cover , int hard , int rate , int ph , int ps , String pdf )
-    {
-
+        this.Bid= bid ;
         this.book= book ;
          this.auther = auther;       
-        this.desc = desc ;
+        this.description = desc ;
         this.type = type ; 
         this.cover = cover; 
         this.hard = hard;
         this.rate = rate;
-        this.ph = ph;
-        this.ps = ps;
-        this.pdf = pdf;
+        this.Ph = ph;
+        this.Ps = ps;
+        this.Pdf = pdf;
                 
     }
 
+    /**
+     *
+     * @param bid
+     * @param bname
+     * @param aname
+     * @param desc
+     * @param typ
+     * @param photo_path
+     * @param pdf
+     * @param hardc
+     * @param rate
+     * @param ph
+     * @param ps
+     */
+ 
+ public int getBid() {
+        return Bid;
+    }
     public String getBook() {
         return book;
     }
@@ -46,15 +61,19 @@ public class classprod {
     }
 
     public String getDesc() {
-        return desc;
+        return description;
     }
 
     public String getType() {
         return type;
     }
-
+  public String getCover() {
+        return cover;
+    }
+    
+  
     public String getPdf() {
-        return pdf;
+        return Pdf;
     }
 
     public int getHard() {
@@ -66,18 +85,15 @@ public class classprod {
     }
 
     public int getPh() {
-        return ph;
+        return Ph;
     }
 
     public int getPs() {
-        return ps;
+        return Ps;
     }
 
-    public String getCover() {
-        return cover;
-    }
-    
+  
  
        
-    
+  
 }

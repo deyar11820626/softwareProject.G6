@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hwsoft.NoController">
+   <children>
+      <TableView fx:id="re" layoutX="95.0" layoutY="123.0" prefHeight="115.0" prefWidth="396.0" style="-fx-background-color: #ffcc00;">
+        <columns>
+          <TableColumn fx:id="ree" prefWidth="395.0" text=" Books Now available  For You !" />
+        </columns>
+      </TableView>
+      <Button layoutX="51.0" layoutY="320.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="71.0" style="-fx-background-color: #ffcc00;" text="&lt;&lt;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="101.0" fitWidth="103.0" layoutX="499.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@books_48px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
