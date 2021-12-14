@@ -24,3 +24,5 @@ This system is designed for 3 types of users: The bookStore visitors, The bookst
 https://trello.com/b/VlLEZeWm/boredbookless
 # burndown chart:
 https://BurndownForTrello.com/share/98j69824da
+
+impediment that we faced and solution: 1- netbeans (Exception hits incomprehensible) not working -- solved by get help from a skilled member.
